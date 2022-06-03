@@ -1,16 +1,17 @@
+CREATE DATABASE ig_clone;
 
-
+USE ig_clone;
 
 /*Users*/
 CREATE TABLE users(
-	id    SERIAL PRIMARY KEY,
+	id INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
 	username VARCHAR(255) NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW()
 );
 
 /*Photos*/
 CREATE TABLE photos(
-	id  SERIAL PRIMARY KEY,
+	id INT AUTO_INCREMENT PRIMARY KEY,
 	image_url VARCHAR(355) NOT NULL,
 	user_id INT NOT NULL,
 	created_dat TIMESTAMP DEFAULT NOW(),
@@ -19,7 +20,7 @@ CREATE TABLE photos(
 
 /*Comments*/
 CREATE TABLE comments(
-	id  SERIAL PRIMARY KEY,
+	id INT AUTO_INCREMENT PRIMARY KEY,
 	comment_text VARCHAR(255) NOT NULL,
 	user_id INT NOT NULL,
 	photo_id INT NOT NULL,
@@ -50,7 +51,7 @@ CREATE TABLE follows(
 
 /*Tags*/
 CREATE TABLE tags(
-	id  SERIAL PRIMARY KEY,
+	id INTEGER AUTO_INCREMENT PRIMARY KEY,
 	tag_name VARCHAR(255) UNIQUE NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW()
 );
